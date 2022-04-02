@@ -1,5 +1,5 @@
 {
-  "name": "jhdc-dosha",
+  "name": "@jimmyhowedotcom/dosha",
   "version": "0.0.1",
   "description": "Dosha Library",
   "main": "index.js",
