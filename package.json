@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "test": "jest --config jestconfig.json",
-    "lint": "xo --fix src"
+    "lint": "xo --fix src",
+    "publish": "npm publish --access public"
   },
   "keywords": [
     "dosha"
