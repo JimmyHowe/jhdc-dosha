@@ -1,16 +1,3 @@
-import { Group } from "./group";
+import { Dosha } from "./dosha";
 
-export class Dosha {
-    groups: Group[] = [];
-
-    defaults()
-    {
-        let physical = new Group("Physical Features");
-        let physiological = new Group("Physical Features");
-        let psychological = new Group("Physical Features");
-
-        this.groups.push(physical);
-        this.groups.push(physiological);
-        this.groups.push(psychological);
-    }
-}
+new Dosha;

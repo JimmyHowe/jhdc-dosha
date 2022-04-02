@@ -17,8 +17,12 @@ export class Collection<T> {
         return this.items[number - 1]
     }
 
-    fill(items: T) {
-        this.items.push(items);
+    fill(items: T[]) {
+        items.forEach((item)=>{
+            this.items.push(item);
+        });
+
+        return this;
     }
 
     count() {

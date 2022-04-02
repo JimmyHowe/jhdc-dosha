@@ -1,11 +1,12 @@
 import { Collection } from "./collection";
 import { Question } from "./question";
+import { Questions } from "./questions";
 
 export class Group {
 
-    constructor(name: string, questions: Question[] = []) {
+    constructor(name: string, questions: Questions) {
         this._name = name;
-        questions.forEach((question: Question) => {
+        questions.items.forEach((question: Question) => {
             this.questions.add(question);
         })
     }
