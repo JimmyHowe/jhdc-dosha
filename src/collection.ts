@@ -1,19 +1,27 @@
 export class Collection<T> {
-    _data: T[] = [];
+    items: T[] = [];
 
     add(item: T) {
-        this._data.push(item);
+        this.items.push(item);
     }
 
     first(): T {
-        return this._data[0];
+        return this.items[0];
     }
 
     last(): T {
-        return this._data[this._data.length - 1]
+        return this.items[this.items.length - 1]
     }
 
     number(number: number): T {
-        return this._data[number - 1]
+        return this.items[number - 1]
+    }
+
+    fill(items: T) {
+        this.items.push(items);
+    }
+
+    count() {
+        return this.items.length;
     }
 }
