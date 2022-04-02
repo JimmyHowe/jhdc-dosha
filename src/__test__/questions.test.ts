@@ -1,5 +1,4 @@
 import { Question } from "../question";
-import { Answers } from "../answers";
 import { Questions } from "../questions";
 
 test('it should allow for a question to be added to collection', () => {

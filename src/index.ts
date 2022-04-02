@@ -1,13 +1,10 @@
 import { Questions } from "./questions";
+import { Collection } from "./collection";
+
+export class Group extends Collection<Questions> {
+
+}
 
 export class Dosha {
-	get groups(): Map<string, Questions> {
-		return this._groups;
-	}
 
-	set groups(value: Map<string, Questions>) {
-		this._groups = value;
-	}
-
-	private _groups: Map<string, Questions>;
 }
