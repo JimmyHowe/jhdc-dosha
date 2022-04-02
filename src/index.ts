@@ -1,8 +1,13 @@
+import { Questions } from "./questions";
 
-export class Hello {
-	say() {
-		return 'Hello';
+export class Dosha {
+	get groups(): Map<string, Questions> {
+		return this._groups;
 	}
-}
 
-new Hello().say();
+	set groups(value: Map<string, Questions>) {
+		this._groups = value;
+	}
+
+	private _groups: Map<string, Questions>;
+}
