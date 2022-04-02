@@ -1,26 +1,21 @@
-import { Question } from "../question";
-import { Answers } from "../answers";
+import { Answer } from "../answer";
+import { getTestQuestion } from "./getTestQuestion";
 
 test('it should allow for a question to be created', () => {
-    expect(new Question("Hello").text).toBe("Hello");
+
+    let question = getTestQuestion();
+
+    expect(question.text).toBe("Hello");
+    expect(question.options[Answer.VATA]).toBe("vata");
+    expect(question.options[Answer.PITA]).toBe("pita");
+    expect(question.options[Answer.KAPHA]).toBe("kapha");
 });
 
 test('it should allow for a question to be answered as PITA', () => {
-    let question = new Question("Hello");
 
-    question.answer = Answers.PITA;
+    let question = getTestQuestion();
 
-    expect(question.answer).toBe(Answers.PITA);
-});
+    question.answer = Answer.PITA;
 
-test('it should allow for a question to have options', () => {
-    let question = new Question("Hello");
-
-    question.addOption(Answers.VATA, "vata");
-    question.addOption(Answers.PITA, "pita");
-    question.addOption(Answers.KAPHA, "kapha");
-
-    expect(question.options.get(Answers.VATA)).toBe('vata');
-    expect(question.options.get(Answers.PITA)).toBe('pita');
-    expect(question.options.get(Answers.KAPHA)).toBe('kapha');
+    expect(question.answer).toBe(Answer.PITA);
 });

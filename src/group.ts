@@ -3,10 +3,10 @@ import { Question } from "./question";
 
 export class Group {
 
-    constructor(name: string, questions: string[] = []) {
+    constructor(name: string, questions: Question[] = []) {
         this._name = name;
-        questions.forEach((question: string) => {
-            this.questions.add(new Question(question));
+        questions.forEach((question: Question) => {
+            this.questions.add(question);
         })
     }
 

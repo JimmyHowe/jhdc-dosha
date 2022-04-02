@@ -1,3 +1,2 @@
-export declare class Hello {
-	say(): void;
+export declare class Dosha {
 }

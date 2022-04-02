@@ -1,4 +1,4 @@
-export enum Answers {
+export enum Answer {
     VATA,
     PITA,
     KAPHA

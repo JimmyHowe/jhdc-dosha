@@ -1,12 +1,25 @@
-import { Answers } from "./answers";
+import { Answer } from "./answer";
+
+interface Options {
+    [Answer.VATA]: string
+    [Answer.PITA]: string
+    [Answer.KAPHA]: string
+}
 
 export class Question {
-
-    options: Map<Answers, string> = new Map<Answers, string>()
-
-    constructor(text: string, answer: Answers | boolean = false) {
+    constructor(text: string, options: Options) {
         this._text = text;
-        this._answer = answer;
+        this._options = options;
+    }
+
+    private _options: Options;
+
+    get options(): Options {
+        return this._options;
+    }
+
+    set options(value: Options) {
+        this._options = value;
     }
 
     private _text: string;
@@ -19,17 +32,26 @@ export class Question {
         this._text = value;
     }
 
-    private _answer: Answers | boolean;
+    private _answer!: Answer;
 
-    get answer(): Answers | boolean {
+    get answer(): Answer {
         return this._answer;
     }
 
-    set answer(value: Answers | boolean) {
+    set answer(value: Answer) {
         this._answer = value;
     }
 
-    addOption(answer: Answers, message: string) {
-        this.options.set(answer, message);
+    addOption(answer: Answer, message: string) {
+
+        this._options[answer] = message;
+
+        return this;
+    }
+
+    withOptions(options: Options) {
+        this.options = options;
+
+        return this;
     }
 }
